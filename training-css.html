@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<style type="text/css">
+			.reveal table th, .reveal table td {
+				text-align: left;
+				padding: 0.2em 0.5em 0.2em 0.5em;
+				border-bottom: 1px solid;
+			}
+		</style>
+		
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<style type="text/css">
+			.github-fork-ribbon {
+				position: absolute;
+				padding: 2px 0;
+				background-color: #23a9c6;
+				background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,.15)));
+				background-image: -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+				background-image: -moz-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+				background-image: -ms-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+				background-image: -o-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+				background-image: linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+				-webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.5);
+				-moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.5);
+				box-shadow: 0 2px 3px 0 rgba(0,0,0,.5);
+				z-index: 9999;
+				pointer-events: auto
+			}
+
+			.github-fork-ribbon a,.github-fork-ribbon a:hover {
+				font: 700 13px "Helvetica Neue",Helvetica,Arial,sans-serif;
+				color: #fff;
+				text-decoration: none;
+				text-shadow: 0 -1px rgba(0,0,0,.5);
+				text-align: center;
+				width: 200px;
+				line-height: 20px;
+				display: inline-block;
+				padding: 2px 0;
+				border-width: 1px 0;
+				border-style: dotted;
+				border-color: #fff;
+				border-color: rgba(255,255,255,.7)
+			}
+
+			.github-fork-ribbon-wrapper {
+				width: 150px;
+				height: 150px;
+				position: absolute;
+				overflow: hidden;
+				top: 0;
+				z-index: 9999;
+				pointer-events: none
+			}
+
+			.github-fork-ribbon-wrapper.fixed {
+				position: fixed
+			}
+
+			.github-fork-ribbon-wrapper.left {
+				left: 0
+			}
+
+			.github-fork-ribbon-wrapper.right {
+				right: 0
+			}
+
+			.github-fork-ribbon-wrapper.left-bottom {
+				position: fixed;
+				top: inherit;
+				bottom: 0;
+				left: 0
+			}
+
+			.github-fork-ribbon-wrapper.right-bottom {
+				position: fixed;
+				top: inherit;
+				bottom: 0;
+				right: 0
+			}
+
+			.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+				top: 42px;
+				right: -43px;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg)
+			}
+
+			.github-fork-ribbon-wrapper.left .github-fork-ribbon {
+				top: 42px;
+				left: -43px;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg)
+			}
+
+			.github-fork-ribbon-wrapper.left-bottom .github-fork-ribbon {
+				top: 80px;
+				left: -43px;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg)
+			}
+
+			.github-fork-ribbon-wrapper.right-bottom .github-fork-ribbon {
+				top: 80px;
+				right: -43px;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg)
+			}
+
+		</style>
+<!--http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html-->
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="github-fork-ribbon-wrapper left-bottom"><div class="github-fork-ribbon"><a href="https://github.com/warpdesign/training-css3">Fork me on GitHub</a></div></div>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Formation CSS 3</h1>
+					<h3>Introduction aux CSS</h3>
+				</section>
+
+				<section>
+					<h2>CSS: Cascading Style Sheets</h2>
+					<p>
+						Les CSS sont des définitions de styles appliqués en cascade. Ils peuvent être définis dans:<br /><br />
+					</p>
+					<ul>
+						<li>Styles par défaut du browser</li>
+						<li class="fragment">Dans un fichier externe: <a href="">&lt;link rel="stylesheet" href="styles.css" /&gt;</a></li>
+						<li class="fragment">Dans une balise: <a href="">&lt;style&gt; { color:red; } &lt;/style&gt;</a></li>
+						<li class="fragment">Dans l'attribut style d'une balise: <a href="">&lt;a style="color:red;"&gt;</a></li>
+					</ul>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Composition d'un sélecteur</h2>
+						<p>
+							Une déclaration CSS commence par un sélecteur qui peut être composé de un ou plusieurs
+						</p>
+						<ul>
+							<li class="fragment">tagName: <a href="">a</a></li>
+							<li class="fragment">classe: <a href="">.maClasse</a></li>
+							<li class="fragment">id: <a href="">#monId</a></li>
+							<li class="fragment">pseudo-classe pour décrire l'état d'un elt, a<a href="">:visited</a></li>
+							<li class="fragment">pseudo-element: p<a href="">::first-line</a></li>
+							<li class="fragment">un ou plusieurs opérateurs: p <a href="">&gt;</a> div</li>
+						</ul>
+			<!--			<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>-->
+					</section>
+					<section>
+						<h2>Exemples de sélecteurs</h2>
+						<pre><code class="css">
+							div a:first-child {
+							}
+
+							#toto.maClass > span{
+							}
+							
+							h1, h2, h3{
+								/* plusieurs sélecteurs avec les mêmes règles */
+							}
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Poids d'un sélecteur</h2>
+						<table>
+						<thead>
+							<th>Exemple</th>
+							<th>Attribut style</th>
+							<th>#ID</th>
+							<th>.class</th>
+							<th>tagName</th>
+						</thead>
+						<tbody>
+							<tr></tr>
+							<tr>
+								<td>#toto</td>
+								<td>0</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+							<tr></tr>
+							<tr class="fragment">
+								<td>#toto > #tata div.titi</td>
+								<td>0</td>
+								<td>2</td>
+								<td>1</td>
+								<td>1</td>
+							</tr>
+							<tr></tr>
+						</tbody>
+						</table>
+					</section>
+					<section>
+					<pre>
+					<code class="html">
+						<style type='text/css'>
+						   #toto{
+							color:red;
+						   }
+
+						  div{
+							color:green;
+						  }
+						</style>
+
+						<div style='color:blue;'>De quelle couleur je suis ?</div>
+					</code>
+					</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Héritage: certaines propriétés s'héritent:</h2>
+						<ul>
+                            <li class="fragment">Ce qui concerne la <a href="">couleur</a></li>
+                            <li class="fragment">Ce qui concerne les <a href="">font</a> (font-size,...)</li>
+                            <li class="fragment">Ce qui concerne <a href="">l'alignement du texte</a></li>
+                            <li class="fragment">etc...</li>
+						</ul>
+					</section>
+					<section>
+						<h2>D'autres ne s'héritent pas:</h2>
+						<ul>
+							<li class="fragment">position</li>
+							<li class="fragment">display</li>
+							<li class="fragment">width, height</li>
+							<li class="fragment">margin</li>
+						</ul>
+						
+					</section>
+				</section>
+
+				<section>
+					<h2>Le box-model</h2>
+					<p>
+						Tout est mesuré en terme de box en CSS.
+						Afin de mesurer la taille d'un élément, on définit d'abord un box-model qui indique comment la taille sera calculée en fonction des différentes parties composant la box:
+					</p>
+					<a class="fragment" class="image" href="exemples/box-model.html">
+						<img src="img/box-model.gif" />
+					</a>
+				</section>
+
+				<section>
+					<h2>Unités</h2>
+                    <p>Certaines propriétés comme height, width,... peuvent définies à l'aide de plusieurs unités:</p>
+					<ul>
+						<li class="fragment">px: pixels</li>
+						<li class="fragment">% (pourcentage du parent)</li>
+						<li class="fragment">em (taille calculée / hauteur de ligne)</li>
+						<li class="fragment">rem (idem mais par rapport au root)</li>
+					</ul>
+                    <p>
+                        <a class="fragment" href="exemples/unites.html">Exemple</a>
+                    </p>
+				</section>
+
+				<section>
+					<h2>Display</h2>
+                    Une des propriétés les plus importantes, qui modifie la position ainsi que la taille d'un élément est le <a href="">display</a>.
+				</section>
+
+				<section>
+                        <h2>Valeurs courantes pour display</h2>
+						<table>
+						<thead>
+							<th>valeur</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr></tr>
+							<tr class="fragment">
+								<td>block</td>
+								<td>l'élément prend toute la largeur de son parent, par défaut sur les div, p,...</td>
+							</tr>
+							<tr></tr>
+							<tr class="fragment">
+								<td>inline</td>
+								<td>l'élément prend la largeur de son contenu, par défaut sur les span,em,a</td>
+							</tr>
+							<tr></tr>
+							<tr class="fragment">
+								<td>inline-block</td>
+								<td>un element block, mais qui reste dans le flow comme les inline</td>
+							</tr>
+							<tr></tr>
+						</tbody>
+						</table>
+				</section>
+
+				<section id="transitions">
+                        <h2>Nouvelles valeurs, depuis CSS 3</h2>
+						<table>
+						<thead>
+							<th>valeur</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr></tr>
+							<tr class="fragment">
+								<td>table-cell</td>
+								<td>l'élément aura le même comportement qu'un tableau (données cellulaires)</td>
+							</tr>
+							<tr></tr>
+							<tr class="fragment">
+								<td>flex (IE10+)</td>
+                                <td>applique un positionnnement à tous les enfants, <a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html">exemple</a> </td>
+							</tr>
+							<tr></tr>
+							<tr class="fragment">
+								<td>etc...</td>
+								<td>d'autres modes de display sont en cours de specifications et peuvent être disponibles sur certains browsers</td>
+							</tr>
+							<tr></tr>
+						</tbody>
+						</table>
+				</section>
+
+                <section>
+                    Exemples de <a href="exemples/display.html">display</a>.
+                </section>
+
+				<section id="themes">
+                    <section>
+                        <h2>Position</h2>
+                        <p>
+                            La <a href="#">position</a> est la deuxième propriété la plus importante en CSS.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>position: static</h2>
+                        <p>
+                            L’élément est rendu dans le flow normal de la page, de haut en bas, et de gauche à droite. Modifier les propriétés top/left de ces éléments sera sans effet.
+                        </p>
+                        <p>
+                            C'est la position par <a href="#">défaut</a> de tous les éléments.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>position: fixed</h2>
+                        <p>
+                            L’élément est positionné de manière fixe par rapport la <a href="#">fenêtre</a> (ce qui fait que le scrolling de la page n’impacte pas sa position). Les autres éléments sont rendus dans le flow normal comme si celui-ci n’existait pas. Il peut se retrouver par dessus d’autres éléments
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>position: relative</h2>
+                        <p>
+                            L’élément est positionné par rapport au flow. Le déplacer laissera vide sa place, qui ne sera pas “reprise” par d’autres éléments.
+
+                            <a href="#">Note:</a> un élément positionné de manière relative avec top et left à 0 sera positionné exactement de la même manière qu’un élément static
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>position: absolute</h2>
+                        <p>
+                            L’élément est positionné en dehors du flow, par rapport au 1er parent qui a la position non static. Tout comme fixed, pour les autres éléments, c’est comme s’il n’était pas là, et il peut être positionné devant un autre élément.
+                        </p>
+                    </section>
+                <section>
+                    <p>
+                        <a href="#">Note:</a> la hauteur d’un élément dépend de son contenu. Si tout son contenu est positionné en absolu, il sort du flux, et c’est comme s’il n’était pas dans l’élément.
+
+=> Un élément ne contenant que des éléments positionnés en absolu fera donc une hauteur nulle. Il faut donc lui fixer une hauteur dans ce cas.
+                    </p>
+                </section>
+                <section>
+                <h2>float: un peu d'histoire</h2>
+                    <p class="fragment">
+Avant l’arrivée des CSS 2, la seule manière de positionner des éléments était de faire des table (en mettant en fond de cellules les éléments que l’on souhaite positionner), ou d’utiliser float.
+                    </p>
+                    <p class="fragment">
+Float a été créé pour permettre à du texte de “flotter” autour d’une image. Et il a rapidement été détourné pour aussi positionner n’importe quel élément.
+                    </p>
+                    <p class="fragment">
+Un élément flottant est poussé vers la gauche ou droite, permettant à des éléments de “flotter” dessus, et aux autres éléments de s’afficher autour.
+                    </p>
+                </section>
+                    <section>
+                    <a href="exemples/position.html">Exemples</a>
+                    </section>
+				</section>
+
+                <section>
+                    <h2>z-index</h2>
+                    <p class="fragment">La propriété <a href="#">z-index</a> permet d’indiquer la position d’un élément dans la pile de rendu.</p><p class="fragment"><a href="#">z-index</a> peut être négatif. Si deux éléments positionnés en absolu n’ont pas de zIndex et sont positionnés au même endroit, le dernier dans le DOM apparaîtra par dessus le précédent.
+</p>
+                </section>
+                <section>
+                    <h2>overflow: auto</h2>
+                    <p class="fragment">Par défaut, le contenu d’un élément “pousse” son contenu. Par défaut; si le contenu a une taille fixée, et que le contenu est trop grand, des scrollbar apparaîtront, permettant de se déplacer dans le contenu de l’éménent: c’est le comportement par défaut: auto
+</p>
+                </section>
+                <section>
+                    <h2>overflow: visible</h2>
+                    <p class="fragment">Parfois, on souhaite cependant que le contenu soit visible (cas d’une bulle d’aide qui apparaîtrait au dessus d’un élément par exemple). visible indique que le contenu sera visible, sans la présense de scrollbar.
+</p>
+                </section>
+                <section>
+                    <h2>overflow: hidden</h2>
+                    <p class="fragment">Par fois, on souhaite à l’inverse cacher le contenu dépassant: hidden permet de cacher le contenu dépassant de la taille du contenant.
+</p>
+                </section>
+				<section>
+                    <h2>Media Queries</h2>
+                    <p>
+                        CSS 3 a aussi introduit la notion de media queries, qui permet de limiter l'application de certaines règles CSS en fonction de plusieurs paramètres comme:
+                    </p>
+                    <ul>
+                        <li class="fragment">la taille de l'écran</li>
+                        <li class="fragment">l'orientation de l'écran</li>
+                        <li class="fragment">le type d'écran (tv, impression, projecteur,...</li>
+                    </ul>
+				</section>
+
+                <section>
+                    <h2>Exemple de query</h2>
+                    <pre>
+                        <code class="css">
+                            @media screen and (max-width: 640px) {
+                              .bloc {
+                                display:block;
+                                clear:both;
+                              }
+                            }
+                        </code>
+                    </pre>
+                    Documentation: <a href="#">http://www.alsacreations.com/article/lire/930-css3-media-queries.html</a>
+                </section>
+
+                <section>
+                    <h2>Centrer un élément horizontalement</h2>
+                    <pre>
+                        <code class="html">
+                            #content{
+                                margin:auto;
+                            }
+                        </code>
+                    </pre>
+                    <a href="exemples/tips.html">Exemple</a>
+                </section>
+
+                <section>
+                    <h2>Centrer un élément verticalement 1</h2>
+                    <pre>
+                        <code class="html">
+                            <div id="parent">
+                                <div id="child">Content here</div>
+                            </div>
+                        </code>
+                    </pre>
+
+                    <pre>
+                        <code class="css">
+                            #parent {
+                                display: table;
+                            }
+
+                            #child {
+                                display: table-cell;
+                                vertical-align: middle;
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>Centrer un élément verticalement 2</h2>
+                    <pre>
+                        <code class="html">
+                            <div id="parent">
+                                <div id="child">Content here</div>
+                            </div>
+                        </code>
+                    </pre>
+
+                    <pre>
+                        <code class="css">
+                             #parent {position: relative;}
+
+                            #child {
+                                border:1px solid black;
+                                position:relative;
+                                width:200px;
+                                height:200px;
+                                top:50%;
+                                transform: translateY(-50%);
+                            }
+                        </code>
+                    </pre>
+                    <a href="exemples/center.html">Exemple</a>
+                    <a href="http://css-tricks.com/centering-css-complete-guide/">Guide pour centrer</a>
+                </section>
+
+                <section>
+					<h1>THE END</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		h3{
+			margin-top:80px;
+		}
+		.test{
+			width:300px;
+			padding:4px;
+			border:2px solid grey;
+			margin: 10px 10px 10px 0;
+		}
+		
+		.test2{
+			border:1px solid black;
+			background-color:rgba(54, 191, 216, 0.2);
+		}
+		
+		.test3{
+			width:400px;
+			border:1px solid black;
+			background-color:rgba(54, 191, 216, 0.2);
+		}
+	
+		.float{
+			float:left;
+		}
+	</style>
+</head>
+	<body>
+		<h1>differents display</h1>
+		<h3>display:block, aucun contenu</h3>
+		<div class="test2"></div>
+		
+		<h3>display:block, contenu</h3>
+		<div class="test2">Hello !</div>
+		
+		<h3>display:block, taille fixée à 400px</h3>
+		<div class="test3">Hello !</div>		
+
+		<h3>display:inline, contenu</h3>
+		<div class="test2" style="display:inline;">Hello !</div>
+		
+		<h3>display:inline, width:400px; (ignorée)</h3>
+		<div class="test3" style="display:inline;">Hello !</div>
+		
+		<h3>display:inline-block, width:400px; </h3>
+		<div class="test3" style="display:inline-block;">Hello !</div>
+		
+		<h3>deux éléments display:block cote à cote</h3>
+		<div class="test2">Div 1</div>
+		<div class="test2">Div 2</div>
+		
+		<h3>deux éléments display:inline cote à cote</h3>
+		<div class="test2" style="display:inline;">Div 1</div>
+		<div class="test2" style="display:inline;">Div 2</div>
+		
+		<h3>deux éléments display:inline-block cote à cote, width: 400px</h3>
+		<div class="test2" style="display:inline-block;width:400px;">Div 1</div>
+		<div class="test2" style="display:inline-block;width:400px;">Div 2</div>		
+		
+		
+		<h1>position</h1>
+		
+		<h1>float</h1>
+		<div class="test2">
+			<img src="http://www.w3schools.com/css/w3css.gif" class="float"></div>			
+			sqfsqggsdgsdg<br />sfsdsdf<br />
+sqfsqggsdgsdg<br />sfsdsdf<br />
+			sqfsqggsdgsdg<br />sfsdsdf<br />
+			sqfsqggsdgsdg<br />sfsdsdf<br />
+			sqfsqggsdgsdg<br />sfsdsdf<br />		
+		</div>
+	</body>
+</html>-->

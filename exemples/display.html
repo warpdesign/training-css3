@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<style type="text/css">
+		h3{
+			margin-top:80px;
+		}
+		.test{
+			width:300px;
+			padding:4px;
+			border:2px solid grey;
+			margin: 10px 10px 10px 0;
+		}
+
+		.test2{
+			border:1px solid black;
+			background-color:rgba(54, 191, 216, 0.2);
+		}
+
+		.test3{
+			width:400px;
+			border:1px solid black;
+			background-color:rgba(54, 191, 216, 0.2);
+		}
+
+		.float{
+			float:left;
+		}
+	</style>
+</head>
+	<body>
+		<h1>differents display</h1>
+		<h3>display:block, aucun contenu</h3>
+		<div class="test2"></div>
+
+		<h3>display:block, contenu</h3>
+		<div class="test2">Hello !</div>
+
+		<h3>display:block, taille fixée à 400px</h3>
+		<div class="test3">Hello !</div>
+
+		<h3>display:inline, contenu</h3>
+		<div class="test2" style="display:inline;">Hello !</div>
+
+		<h3>display:inline, width:400px; (ignorée)</h3>
+		<div class="test3" style="display:inline;">Hello !</div>
+
+		<h3>display:inline-block, width:400px; </h3>
+		<div class="test3" style="display:inline-block;">Hello !</div>
+
+		<h3>deux éléments display:block cote à cote</h3>
+		<div class="test2">Div 1</div>
+		<div class="test2">Div 2</div>
+
+		<h3>deux éléments display:inline cote à cote</h3>
+		<div class="test2" style="display:inline;">Div 1</div>
+		<div class="test2" style="display:inline;">Div 2</div>
+
+		<h3>deux éléments display:inline-block cote à cote, width: 400px</h3>
+		<div class="test2" style="display:inline-block;width:400px;">Div 1</div>
+		<div class="test2" style="display:inline-block;width:400px;">Div 2</div>
+	</body>
+</html>
