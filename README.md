@@ -17,4 +17,4 @@ Présentation rapide des CSS(3) destinée à ceux qui découvrent les CSS
 
 ## Présentation
 
-Visualiser [ici](http://warpdesign.github.io/training-css3/training-css.html "ici")
+Visualiser [ici](http://warpdesign.github.io/training-css3/ "ici")
