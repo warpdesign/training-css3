@@ -172,10 +172,10 @@
 						Les CSS sont des définitions de styles appliqués en cascade. Ils peuvent être définis dans:<br /><br />
 					</p>
 					<ul>
-						<li>Styles par défaut du browser</li>
-						<li class="fragment">Dans un fichier externe: <a href="">&lt;link rel="stylesheet" href="styles.css" /&gt;</a></li>
-						<li class="fragment">Dans une balise: <a href="">&lt;style&gt; { color:red; } &lt;/style&gt;</a></li>
-						<li class="fragment">Dans l'attribut style d'une balise: <a href="">&lt;a style="color:red;"&gt;</a></li>
+						<li>les styles par défaut du browser</li>
+						<li class="fragment">un fichier externe: <a href="">&lt;link rel="stylesheet" href="styles.css" /&gt;</a></li>
+						<li class="fragment">une balise: <a href="">&lt;style&gt; { color:red; } &lt;/style&gt;</a></li>
+						<li class="fragment">l'attribut style d'une balise: <a href="">&lt;a style="color:red;"&gt;</a></li>
 					</ul>
 				</section>
 
@@ -201,15 +201,15 @@
 					<section>
 						<h2>Exemples de sélecteurs</h2>
 						<pre><code class="css">
-							div a:first-child {
-							}
+div a:first-child {
+}
 
-							#toto.maClass > span{
-							}
-							
-							h1, h2, h3{
-								/* plusieurs sélecteurs avec les mêmes règles */
-							}
+#toto.maClass > span{
+}
+
+h1, h2, h3{
+	/* plusieurs sélecteurs avec les mêmes règles */
+}
 							</code>
 						</pre>
 					</section>
@@ -250,17 +250,17 @@
 					<section>
 					<pre>
 					<code class="html">
-						<style type='text/css'>
-						   #toto{
-							color:red;
-						   }
+<style type='text/css'>
+   #toto{
+	color:red;
+   }
 
-						  div{
-							color:green;
-						  }
-						</style>
+  div{
+	color:green;
+  }
+</style>
 
-						<div style='color:blue;'>De quelle couleur je suis ?</div>
+<div style='color:blue;'>De quelle couleur je suis ?</div>
 					</code>
 					</pre>
 					</section>
@@ -301,12 +301,13 @@
 
 				<section>
 					<h2>Unités</h2>
-                    <p>Certaines propriétés comme height, width,... peuvent définies à l'aide de plusieurs unités:</p>
+                    <p>Certaines propriétés comme height, width,... peuvent être définies à l'aide de plusieurs unités:</p>
 					<ul>
 						<li class="fragment">px: pixels</li>
 						<li class="fragment">% (pourcentage du parent)</li>
 						<li class="fragment">em (taille calculée / hauteur de ligne)</li>
 						<li class="fragment">rem (idem mais par rapport au root)</li>
+						<li class="fragment">etc...</li>
 					</ul>
                     <p>
                         <a class="fragment" href="exemples/unites.html">Exemple</a>
@@ -315,7 +316,7 @@
 
 				<section>
 					<h2>Display</h2>
-                    Une des propriétés les plus importantes, qui modifie la position ainsi que la taille d'un élément est le <a href="">display</a>.
+                    Une des propriétés les plus importantes, qui modifie la position ainsi que la taille d'un élément, est le <a href="">display</a>.
 				</section>
 
 				<section>
@@ -399,7 +400,7 @@
                     <section>
                         <h2>position: fixed</h2>
                         <p>
-                            L’élément est positionné de manière fixe par rapport la <a href="#">fenêtre</a> (ce qui fait que le scrolling de la page n’impacte pas sa position). Les autres éléments sont rendus dans le flow normal comme si celui-ci n’existait pas. Il peut se retrouver par dessus d’autres éléments
+                            L’élément est positionné de manière fixe par rapport à la <a href="#">fenêtre</a> (ce qui fait que le scrolling de la page n’impacte pas sa position). Les autres éléments sont rendus dans le flow normal comme si celui-ci n’existait pas. Il peut se retrouver par dessus d’autres éléments
                         </p>
                     </section>
 
@@ -422,19 +423,19 @@
                     <p>
                         <a href="#">Note:</a> la hauteur d’un élément dépend de son contenu. Si tout son contenu est positionné en absolu, il sort du flux, et c’est comme s’il n’était pas dans l’élément.
 
-=> Un élément ne contenant que des éléments positionnés en absolu fera donc une hauteur nulle. Il faut donc lui fixer une hauteur dans ce cas.
+=> Un élément ne contenant que des éléments positionnés en absolu fera donc une hauteur nulle. Il faut donc lui fixer une hauteur si on souhaite le voir apparaître.
                     </p>
                 </section>
                 <section>
                 <h2>float: un peu d'histoire</h2>
                     <p class="fragment">
-Avant l’arrivée des CSS 2, la seule manière de positionner des éléments était de faire des table (en mettant en fond de cellules les éléments que l’on souhaite positionner), ou d’utiliser float.
+Avant l’arrivée des CSS 2, la seule manière de positionner des éléments était de faire des table (en mettant en fond de cellule les éléments que l’on souhaite positionner), ou d’utiliser float.
                     </p>
                     <p class="fragment">
 Float a été créé pour permettre à du texte de “flotter” autour d’une image. Et il a rapidement été détourné pour aussi positionner n’importe quel élément.
                     </p>
                     <p class="fragment">
-Un élément flottant est poussé vers la gauche ou droite, permettant à des éléments de “flotter” dessus, et aux autres éléments de s’afficher autour.
+Un élément flottant est "poussé" vers la gauche ou droite, permettant à des éléments de “flotter” dessus, et aux autres éléments de s’afficher autour.
                     </p>
                 </section>
                     <section>
@@ -449,17 +450,17 @@ Un élément flottant est poussé vers la gauche ou droite, permettant à des é
                 </section>
                 <section>
                     <h2>overflow: auto</h2>
-                    <p class="fragment">Par défaut, le contenu d’un élément “pousse” son contenu. Par défaut; si le contenu a une taille fixée, et que le contenu est trop grand, des scrollbar apparaîtront, permettant de se déplacer dans le contenu de l’éménent: c’est le comportement par défaut: auto
+                    <p class="fragment">Si un élément n'a pas de taille fixée, ajouter du contenu l'agrandira automatiquement. S'il a une taille fixée, et que le contenu est trop grand pour rentrer dans l'élément, des scrollbar apparaîtront, permettant de se déplacer dans l’élément: c’est la valeur par défaut de la propriété overflow.
 </p>
                 </section>
                 <section>
                     <h2>overflow: visible</h2>
-                    <p class="fragment">Parfois, on souhaite cependant que le contenu soit visible (cas d’une bulle d’aide qui apparaîtrait au dessus d’un élément par exemple). visible indique que le contenu sera visible, sans la présense de scrollbar.
+                    <p class="fragment">Parfois, on souhaite cependant que le contenu soit visible (cas d’une bulle d’aide qui apparaîtrait au dessus d’un élément par exemple) même s'il dépasse la taille spécifiée pour un élément. Utiliser overflow:visible indique que le contenu sera visible, sans la présense de scrollbar.
 </p>
                 </section>
                 <section>
                     <h2>overflow: hidden</h2>
-                    <p class="fragment">Par fois, on souhaite à l’inverse cacher le contenu dépassant: hidden permet de cacher le contenu dépassant de la taille du contenant.
+                    <p class="fragment">Parfois, on souhaite à l’inverse cacher le contenu dépassant. overflow:hidden permet de cacher (cropper) le contenu dépassant de la taille du contenant.
 </p>
                 </section>
 				<section>
@@ -475,7 +476,7 @@ Un élément flottant est poussé vers la gauche ou droite, permettant à des é
 				</section>
 
                 <section>
-                    <h2>Exemple de query</h2>
+                    <h2>Exemple de media query</h2>
                     <pre>
                         <code class="css">
                             @media screen and (max-width: 640px) {
